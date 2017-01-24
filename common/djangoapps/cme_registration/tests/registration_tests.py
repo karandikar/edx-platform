@@ -53,7 +53,6 @@ class TestCmeRegistration(UrlResetMixin, TestCase):
                           'specialty': 'specialty',
                           'sub_specialty': 'sub_specialty',
                           'affiliation': 'affiliation',
-                          'other_affiliation': 'other_affiliation',
                           'sub_affiliation': 'sub_affiliation',
                           'sunet_id': 'sunet_id',
                           'stanford_department': 'stanford_department',
@@ -405,8 +404,7 @@ class TestCmeRegistration(UrlResetMixin, TestCase):
         self.post_vars['specialty_free'] = 'Patient care'
         self.post_vars['sub_specialty'] = 'Other'
         self.post_vars['sub_specialty_free'] = 'Legs and feet'
-        self.post_vars['affiliation'] = 'Other'
-        self.post_vars['other_affiliation'] = 'other_affiliation'
+        self.post_vars['affiliation'] = 'Not affiliated with Stanford Medicine'
         self.post_vars['sub_affiliation'] = ''
 
         url = reverse('create_account')
@@ -436,8 +434,7 @@ class TestCmeRegistration(UrlResetMixin, TestCase):
                                                          license_state='license_state',
                                                          physician_status='physician_status',
                                                          patient_population='patient_population',
-                                                         affiliation='Other',
-                                                         other_affiliation='other_affiliation',
+                                                         affiliation='Not affiliated with Stanford Medicine',
                                                          sub_affiliation='',
                                                          sunet_id='sunet_id',
                                                          stanford_department='stanford_department',
