@@ -89,7 +89,7 @@ p.unauth-warning a {
 header.global.slim {
   box-shadow: 0 1px 2px $shadow-l1;
   height: auto;
-  padding: ($baseline/4) 0 ($baseline/2) 0;
+  padding: 10px 0px 10px 0px;
   border-bottom: 1px solid $outer-border-color;
   background: $header-bg;
 
@@ -138,12 +138,15 @@ header.global.slim {
   }
 
   nav {
-    padding-top: ($baseline/4);
+    padding: 0px 0px 0px 0px;
   }
 
   h1.logo {
     margin: 0 ($baseline/2) 0 0;
     @include padding-right(20px);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 
     &:before {
       @extend %faded-vertical-divider;
@@ -152,7 +155,8 @@ header.global.slim {
       height: 35px;
       position: absolute;
       @include right(3px);
-      top: 0;
+      top: 50%;
+      transform: translateY(-50%);
       width: 1px;
     }
 
@@ -170,6 +174,11 @@ header.global.slim {
     img {
       height: 30px;
     }
+    
+    a {
+      display: flex;
+      line-height: 40px;
+    }
   }
 
   .nav-main,
@@ -184,13 +193,15 @@ header.global.slim {
     font-weight: 600;
     color: $lighter-base-font-color;
     letter-spacing: 0;
-    margin-top: 9px;
-    margin-bottom: 0;
+    margin: 0px 0px 0px 0px;
     text-transform: none;
     text-shadow: 0 1px 0 #fff;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 
     .provider {
       font: inherit;
